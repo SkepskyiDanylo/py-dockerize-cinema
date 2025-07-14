@@ -12,7 +12,7 @@ class Command(BaseCommand):
         while not db_conn:
             try:
                 db_conn = connections["default"]
-                db_conn.cursor().cursor()
+                db_conn.cursor()
             except OperationalError:
                 self.stdout.write("Database connection failed.")
                 sleep(1)
